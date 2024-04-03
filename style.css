@@ -6,21 +6,30 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    /* backdrop-filter: blur(10%); */
-    /* background-color:#F1916D; */
+    
 }
 nav{
     display: flex;
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(5, 5, 5, 0.964); 
+  
     
 }
+nav::-webkit-scrollbar{
+    display: none;
+}
+
+
  nav .logo h1{ 
      font-weight: bolder;
      
      
  }
- 
+ nav .logo h1:hover{
+    transform: scaleY(1.2);
+ }
  h1{
     font-size: 2rem;
     color: rgba(245, 20, 20, 0.964);
@@ -54,7 +63,7 @@ nav{
  ul li a::after{
     content: '';
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: rgba(245, 20, 20, 0.964);
     margin: auto;
     display: block;
@@ -63,10 +72,12 @@ nav{
     
     width: 100%;
     transition: width 0.1s linear;
+    
 
   }
   ul li a:hover{
     color: rgba(245, 20, 20, 0.964);
+    backdrop-filter: blur(20px);
     
   }
 
@@ -78,26 +89,30 @@ nav{
     border-radius: 5px;
     color: rgba(245, 20, 20, 0.964);
     font-weight: bolder;
+    transition: all ease 0.5s;
  }
+
+
  .elements li #btn1:hover{
    
     background-color: rgba(245, 20, 20, 0.964);
-cursor: pointer;
+    cursor: pointer;
     color:white;
+    
  }
  .main{
     height: 300px;
     display: flex;
     align-items: center;
-justify-content: center;
-margin-top: 3rem;
+    justify-content: center;
+    margin-top: 3rem;
  }
     .main-img{
         background-image: url(img.jpg); 
         background-size: cover;
         height: 300px;
         width: 300px;
-        border: 10px solid black;
+        border: 8px solid black;
     border-radius: 50%;
    
     
@@ -119,6 +134,19 @@ margin-top: 3rem;
     
 
 }
+.info p::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: rgba(245, 20, 20, 0.964);
+    margin: auto;
+    display: block;
+
+}
+.info p:hover::after{
+    width: 100%;
+    transition: width 0.5s linear;
+}
 .info h3{
     margin-top: 10px;
     color: white;
@@ -131,16 +159,25 @@ footer{
  /* middle part start
  */
 .middle{
-    width: 94rem;
+    width: 94REM;
     height: 45rem;
     background-color: #002244;
     display: block;
+    
+}
+.middle::-webkit-scrollbar{
+    display: none;
 }
 .middle img{
     position: relative;
     left: 10rem;
     top: 8rem;
-
+    transition: all ease .5s;
+ 
+}
+.middle img:hover{
+    box-shadow: 20px 20px 25px black;
+    transform: scale(1.1);
 }
 .middle .text{
     color: white;
@@ -159,13 +196,26 @@ footer{
 .text #heading{
     font-size: 2.5rem;
     margin: 0%;
-    overflow: hidden;
+    
+    width: 11rem;
    
 }
+#heading::after{
+    content:'';
+    height: 3px;
+    width: 0;
+    background-color: rgba(245, 20, 20, 0.964);
+    margin: auto;
+    display: block;
+}
+#heading:hover::after{
+    width: 100%;
+    
+    transition: width 0.1s linear;
+}
 .text #heading:hover{
-    color: pink;
-    zoom: 10px;
-    transition: 0.5s;
+    color:rgba(245, 20, 20, 0.964);
+  
     
 
 }
@@ -175,12 +225,7 @@ footer{
     cursor: pointer;
 
 }
-/* .text #box{
-    background-color: black;
-    border: 2px solid rgba(245, 20, 20, 0.964);
-    color: beige;
-    
-} */
+
 .text .textarea{
     background-color:black;
     height: 12rem;
@@ -196,15 +241,13 @@ footer{
 {
     background-color:#002244;
     width: 50%;
-    /* display: flex;
-    flex-direction:rown; */
+   
     
 }
 .textarea .list2{
     background-color: #002244;
     width: 50%;
-    /* display: flex;
-    flex-direction: row; */
+   
 }
 .list p{
     margin: 0%;
@@ -242,7 +285,7 @@ footer{
     height: 45rem;
     width: 94rem;
     background-color: #000328;
-    /* max-height: 135rem; */
+   
     
 }
 .lt{
@@ -258,11 +301,11 @@ footer{
     color: rgba(245, 20, 20, 0.964);
 }
 #do{
-    padding-top: 3rem;
+    padding-top: 6rem;
     padding-bottom: .5rem;
 }
 .lt h5{
-    margin: 0%;
+    margin-top: 1rem;
     padding: 0;
     padding-left: 10rem;
     font-size: 2.5rem;
@@ -303,7 +346,15 @@ footer{
     border: 2px solid rgba(245, 20, 20, 0.964);
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
+    overflow:scroll;
+    transition: 0.5s;
+}
+.card1:hover{
+    box-shadow: 15px 15px 20px black;
+    transform: scale(1.05);
+}
+.card1::-webkit-scrollbar{
+    display: none;
 }
 .card1 .img1{
     
@@ -312,18 +363,20 @@ footer{
     background-image: url(cd.jpg);
     background-size: cover;
     background-position: center;
-    /* mix-blend-mode:multiply; */
+    
     
 }
 .card1 .title{
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 4rem;
+    
     color: rgba(245, 20, 20, 0.964);
 }
 .card1 .tp{
     margin-left: 10px;
     font-size: 20px;
+    color: white;
     
 }
 .card2{
@@ -335,30 +388,42 @@ footer{
     border: 2px solid rgba(245, 20, 20, 0.964);
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
+    transition: 0.5;
+}
+
+.card2::-webkit-scrollbar{
+    display: none;
+
+}
+.card2:hover{
+    box-shadow: 15px 15px 20px black;
+    transform: scale(1.05);
 }
 .card2 .img2{
-    
     height: 40%;
     width: 100%;
+    
     background-image: url(html1.jpg);
     background-size: cover;
     background-position: center;
-    /* mix-blend-mode: multiply; */
+  
     
 }
 .card2 .title2{
+   display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 7.5rem;
+    
     color: rgba(245, 20, 20, 0.964);
 }
 .card2 .tp2{
     margin-left: 10px;
     font-size: 20px;
+    color: white;
 }
 .card3{
-    background-color:#002244;
+    background-color: #002244;
     height: 80%;
     width: 20rem;
     margin-top: 4rem;
@@ -366,30 +431,121 @@ footer{
     border: 2px solid rgba(245, 20, 20, 0.964);
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
+    transition: 0.5s;
+}
+.card3::-webkit-scrollbar{
+    display: none;
+}
+.card3:hover{
+    box-shadow: 15px 15px 20px black;
+    transform: scale(1.05);
 }
 .card3 .img3{
     
     height: 40%;
-    width: 100%;
-    background-image: url(css1.jpg);
+    width: 20rem;
     background-size: cover;
     background-position: center;
+    object-fit: contain;
+    
+
     
 }
 .card3 .title3{
+    
+    
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 8.5rem;
+    
     color: rgba(245, 20, 20, 0.964);
 }
 .card3 .tp3{
+    
+    
     margin-left: 10px;
     font-size: 20px;
+    color: white;
 }
-/* .contact{
+.contact{
+    margin: 0%;
+    padding: 0%;
     background-color: black;
     color: white;
     height: 15rem;
     width: 94rem;
-} */
+    transition: all ease 1s;
+
+}
+.contact:hover{
+    background-color:#002244; ;
+}
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 20rem;
+    margin-left: 36.5rem;
+
+}
+.con h1 a{
+    color: white;
+    text-decoration: none;
+}
+.con h1 a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: rgba(245, 20, 20, 0.964);
+    display: block;
+    margin: auto;
+
+}
+.con h1 a:hover::after{
+    width: 100%;
+    transition: width  0.3s linear;
+}
+.con h1 a:hover{
+    color: rgba(245, 20, 20, 0.964);
+}
+.contact .flex{
+    display: flex;
+    flex-direction: row;
+}
+.contact .name{
+    
+    width: 40%;
+    height: 7rem;
+    margin-left: 10rem;
+    
+}
+.contact .name a{
+    text-decoration: none; 
+    color: white;  
+    
+}
+.contact .name a:hover{
+    color: rgba(245, 20, 20, 0.964);
+}
+.contact .name p{
+    font-size: 1.5rem;
+}
+.contact .details{
+       
+       width: 50%;
+       height: 7rem;
+       margin-left: 20%;
+
+}
+.details a{
+    text-decoration: none;
+    color: white;
+}
+.details p{
+    font-size: 1.5rem;
+}
+.contact .details a:hover{
+    color: rgba(245, 20, 20, 0.964);
+}
