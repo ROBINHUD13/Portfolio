@@ -1,6 +1,6 @@
 .container{ 
     height: 45rem;
-    width: 94rem;
+    width: 100vw;
     background-image:url(background.jpg);
     background-blend-mode: darken;
     background-size: cover;
